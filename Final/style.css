@@ -1,0 +1,54 @@
+#bd{
+    width: 100%;
+    height:100%;
+    animation: anime 5s infinite alternate;
+}
+
+@keyframes anime {
+    from {
+        background: aquamarine;
+    }
+
+    to{
+        background-color: plum;
+    }
+
+}
+
+#flex{
+    display: flex;
+}
+
+#spring{
+    margin-right: 10px;
+}
+
+#autunm{
+    margin-right: 11px;
+}
+
+#nope{
+    margin-right: 6px;
+}
+
+
+#spring, #summer, #winter, #autunm, #start, #nope{
+    width: 90px;
+    padding:5px;
+    border: 1px solid pink;
+    border-radius: 5px;
+    animation: anime1 5s infinite alternate;
+}
+
+@keyframes anime1 {
+    from {
+        background: plum;
+        border: 1px solid rgb(31, 195, 201);;
+    }
+
+    to{
+        background-color: aquamarine;
+        border: 1px solid white;
+    }
+
+}

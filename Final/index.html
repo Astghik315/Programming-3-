@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body id="bd">
+    
+<div id="flex">
+    <div>
+    <h2 id="maintext">You can change Weather if you click button</h2>
+    <button id="spring">Spring</button>
+    <button id="summer">Summer</button>
+    <br>
+    <br>
+    <button id="autunm">Autunm</button>
+    <button id="winter">Winter</button>
+    <br>
+    <br>
+    <button id="nope">I don't need weather</button>
+    <button id="start">Lets go at first</button>
+    <br>
+    <br>
+    <button onclick="test()">KKKK</button>
+    <script>
+
+        function mySpring() {
+            document.getElementById("maintext").innerHTML = "Now its Spring"
+        }
+        function mySummer() {
+            document.getElementById("maintext").innerHTML = "Now its Summer"
+        }
+        function myAutunm() {
+            document.getElementById("maintext").innerHTML = "Now its Autunm"
+        }
+        function myWinter() {
+            document.getElementById("maintext").innerHTML = "Now its Winter"
+        }
+        function Nope() {
+            document.getElementById("maintext").innerHTML = "Okay, We don't now what weather is it"
+        }
+        function Start() {
+            document.getElementById("maintext").innerHTML = "You can change Weather if you click button"
+        }
+
+        document.getElementById("spring").addEventListener("click", mySpring)
+        document.getElementById("summer").addEventListener("click", mySummer)
+        document.getElementById("autunm").addEventListener("click", myAutunm)
+        document.getElementById("winter").addEventListener("click", myWinter)
+        document.getElementById("nope").addEventListener("click", Nope)
+        document.getElementById("start").addEventListener("click", Start)
+    </script>
+
+    </div> 
+        <!-- <span>
+        <p>Hello World<p> --> 
+            <!-- Here will be some information about key events
+        </span>
+</div>
+
+</body>
+
+</html>
