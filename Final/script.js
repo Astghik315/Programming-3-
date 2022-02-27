@@ -3,9 +3,8 @@ var side = 25
 
 var weather = "winter"
 function setup() {
-    
     frameRate(5);
-    createCanvas(15 * side, 15 * side);
+    createCanvas(15 * side + 1, 15 * side + 1);
     background('#add8e6');
 }
 
@@ -40,6 +39,8 @@ function nkarel(matrix) {
 
 socket.on('send matrix', nkarel)
 
+console.log(grass)
+
 // spring = document.getElementById("spring")
 // summer1 = document.getElementById("summer")
 // autunm = document.getElementById("autunm")
@@ -47,11 +48,16 @@ socket.on('send matrix', nkarel)
 
 
 
-
-
-function test() {
-    socket.emit("test")
+function kill() {
+    socket.emit("kill")
 }
+
+function newgrasseater(){
+    socket.emit("newgrasseater")
+}
+// function test() {
+//     socket.emit("test")
+// }
 
 
 //         }

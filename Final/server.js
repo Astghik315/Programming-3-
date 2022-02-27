@@ -12,6 +12,7 @@ var io = require('socket.io')(server);
 var fs = require("fs");
 
 
+
 app.use(express.static("."));
 
 app.get('/', function (req, res) {
@@ -79,8 +80,9 @@ io.sockets.emit('send matrix', matrix)
  pinkArr = []
  blackArr = []
 
+
 Grass = require("./Grass")
-GrassEater = require("./GrassEater")
+GrasssEater = require("./GrassEater")
 Black = require("./Black")
 Pink = require("./Pink")
 Predactor = require("./Predactor")
@@ -131,22 +133,55 @@ function game() {
 
 setInterval(game, 500)
 
-
-
-function test() {
-    console.log("Hiii");
-    // window.addEventListener('keydown', (e) => {
-    //     let key = e.keyCode
-    //     if (key == 32) {
-    //         for(let i in pinkArr) {
-    //             pinkArr[i].move(key)
-    //         }
-    //     }
-    // });
+function kill() {
+    grassArr = [];
+    grassEaterArr = [];
+    grassEaterArr = [];
+    grassEaterEaterArr = [];
+    coinArr = [];
+    coinerArr = [];
+    for (var y = 0; y < matrix.length; y++) {
+        for (var x = 0; x < matrix[y].length; x++) {
+            matrix[y][x] = 0;
+        }
+    }
     io.sockets.emit("send matrix", matrix);
 }
 
-// function weather(){
+function newgrasseater() {
+    for (var i = 0; i < 15; i++) {
+        var x = Math.floor(Math.random() * matrix[0].length)
+        var y = Math.floor(Math.random() * matrix.length)
+        if (matrix[y][x] == 0 || matrix[y][x] == 1) {
+            matrix[y][x] = 2
+            grassEaterArr.push(new GrassEater(x, y, 2));
+        }
+    }
+    io.sockets.emit("send matrix", matrix);
+}
+
+io.on('connection', function (socket) {
+    createObject();
+    socket.on("kill", kill);
+    socket.on("newgrasseater", newgrasseater)
+    // socket.on("test", test);
+});
+
+
+// function test() {
+//     console.log("Hiii");
+//     // window.addEventListener('keydown', (e) => {
+//     //     let key = e.keyCode
+//     //     if (key == 32) {
+//     //         for(let i in pinkArr) {
+//     //             pinkArr[i].move(key)
+//     //         }
+//     //     }
+//     // });
+//     io.sockets.emit("send matrix", matrix);
+// }
+
+// // function weather(){
 //     document.getElementById("summer").addEventListener("click", function(){
 //         alert("Spring")
 //     })
@@ -162,11 +197,6 @@ function test() {
 //     io.sockets.emit("send matrix", matrix);
 // }
 
-
-io.on('connection', function (socket) {
-    createObject();
-    socket.on("test", test);
-});
 
 
 
