@@ -32,7 +32,7 @@
 }
 
 
-#spring, #summer, #winter, #autunm, #start, #nope{
+#spring, #summer, #winter, #autunm, #start, #nope, #new, #kill{
     width: 90px;
     padding:5px;
     border: 1px solid pink;
@@ -51,4 +51,10 @@
         border: 1px solid white;
     }
 
+}
+#kill{
+    margin-right: 5px
+}
+#new {
+    width: 130px;   
 }

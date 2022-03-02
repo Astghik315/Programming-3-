@@ -32,6 +32,9 @@ function nkarel(matrix) {
             } else if (matrix[y][x] == 5) {
                 fill("black");
                 rect(x * side, y * side, side, side);
+            } else if (matrix[y][x] == 9) {
+                fill("purple");
+                rect(x * side, y * side, side, side);
             }
         }
     }
@@ -54,6 +57,10 @@ function kill() {
 
 function newgrasseater(){
     socket.emit("newgrasseater")
+}
+
+function know(){
+    socket.emit("know")
 }
 // function test() {
 //     socket.emit("test")

@@ -1,10 +1,3 @@
-//Աստղիկ ջան կոդիտ մեջ սխալները շատ են կոնկրետ 
-//կլասսերի մեջ ես մի քանի բան ուղղել եմ բայց ամբողջը ես չեմ անի
-//1․  constructor-ները չես փոփոխել super(x,y) չկաին  2 տեղ ուղղել եմ
-//2․ մեթոդներում դեռ կան p5-ից եկող  random()-ներ
-//3․ chooseCell-ների դիմացի this -րը  super  չես դարձրել
-//էսքանը ուղղիր եթե էլի խնդիր լինի ես կօգնեմ բայց ամբողը չեմ գրի միքիչ տանջվի ու դուխով կստացվի)))
-
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
@@ -82,7 +75,7 @@ io.sockets.emit('send matrix', matrix)
 
 
 Grass = require("./Grass")
-GrasssEater = require("./GrassEater")
+GrassEater = require("./GrassEater")
 Black = require("./Black")
 Pink = require("./Pink")
 Predactor = require("./Predactor")
@@ -106,6 +99,9 @@ function createObject() {
             } else if (matrix[y][x] == 5) {
                 let pr = new Black(x, y)
                 blackArr.push(pr)
+            } else if (matrix[y][x] == 9) {
+                let gr = new Grass(x, y)
+                grassArr.push(gr)
             }
         }
     }
@@ -154,7 +150,19 @@ function newgrasseater() {
         var y = Math.floor(Math.random() * matrix.length)
         if (matrix[y][x] == 0 || matrix[y][x] == 1) {
             matrix[y][x] = 2
-            grassEaterArr.push(new GrassEater(x, y, 2));
+            grassEaterArr.push(new GrassEater(x, y));
+        }
+    }
+    io.sockets.emit("send matrix", matrix);
+}
+
+function know() {
+    console.log("Im working")
+    for (var i = 0; i < 15; i++) {
+        var x = Math.floor(Math.random() * matrix[0].length)
+        var y = Math.floor(Math.random() * matrix.length)
+        if (matrix[y][x] == 1) {
+            matrix[y][x] = 9
         }
     }
     io.sockets.emit("send matrix", matrix);
@@ -164,6 +172,7 @@ io.on('connection', function (socket) {
     createObject();
     socket.on("kill", kill);
     socket.on("newgrasseater", newgrasseater)
+    socket.on("know", know)
     // socket.on("test", test);
 });
 
