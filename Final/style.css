@@ -58,3 +58,8 @@
 #new {
     width: 130px;   
 }
+
+canvas{
+    margin-left: 400px;
+    border-radius: 20px;
+}

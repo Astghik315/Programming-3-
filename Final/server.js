@@ -11,7 +11,7 @@ app.use(express.static("."));
 app.get('/', function (req, res) {
     res.redirect('index.html');
 });
-server.listen(3005);
+server.listen(3000);
 
 
  matrix = [];
@@ -156,23 +156,11 @@ function newgrasseater() {
     io.sockets.emit("send matrix", matrix);
 }
 
-function know() {
-    console.log("Im working")
-    for (var i = 0; i < 15; i++) {
-        var x = Math.floor(Math.random() * matrix[0].length)
-        var y = Math.floor(Math.random() * matrix.length)
-        if (matrix[y][x] == 1) {
-            matrix[y][x] = 9
-        }
-    }
-    io.sockets.emit("send matrix", matrix);
-}
 
 io.on('connection', function (socket) {
     createObject();
     socket.on("kill", kill);
     socket.on("newgrasseater", newgrasseater)
-    socket.on("know", know)
     // socket.on("test", test);
 });
 
