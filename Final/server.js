@@ -11,7 +11,7 @@ app.use(express.static("."));
 app.get('/', function (req, res) {
     res.redirect('index.html');
 });
-server.listen(3000);
+server.listen(3020);
 
 
  matrix = [];
@@ -161,40 +161,7 @@ io.on('connection', function (socket) {
     createObject();
     socket.on("kill", kill);
     socket.on("newgrasseater", newgrasseater)
-    // socket.on("test", test);
 });
-
-
-// function test() {
-//     console.log("Hiii");
-//     // window.addEventListener('keydown', (e) => {
-//     //     let key = e.keyCode
-//     //     if (key == 32) {
-//     //         for(let i in pinkArr) {
-//     //             pinkArr[i].move(key)
-//     //         }
-//     //     }
-//     // });
-//     io.sockets.emit("send matrix", matrix);
-// }
-
-// // function weather(){
-//     document.getElementById("summer").addEventListener("click", function(){
-//         alert("Spring")
-//     })
-//     summer.addEventListener("click", function(){
-//         alert("Summer")
-//     })
-//     autunm.addEventListener("click", function(){
-//         alert(autunm)
-//     })
-//     winter.addEventListener("click", function(){
-//         alert("HI")
-//     })
-//     io.sockets.emit("send matrix", matrix);
-// }
-
-
 
 
 var statistics = {};

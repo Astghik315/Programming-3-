@@ -54,9 +54,3 @@ function kill() {
 function newgrasseater(){
     socket.emit("newgrasseater")
 }
-
-
-// function test() {
-//     socket.emit("test")
-// }
-

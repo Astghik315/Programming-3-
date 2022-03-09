@@ -1,7 +1,12 @@
 #bd{
     width: 100%;
-    height:100%;
     animation: anime 5s infinite alternate;
+    width: 100%;
+    height: 100vh;
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    background-size: 400% 400%;
 }
 
 @keyframes anime {
@@ -16,27 +21,44 @@
 }
 
 #flex{
+    border: 1px dashed  black;
+    border-radius: 5px;
     display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-left:60px;
+    margin-top: 15px;
 }
 
-#spring{
-    margin-right: 10px;
+#events{
+    font-family: 'Fredoka', sans-serif;
+    margin-right: 15px;
 }
 
+#hrf{
+    text-decoration: none;
+    font-family: 'Fredoka', sans-serif;
+    color: black;
+}
+#but{
+    margin: 60px;
+}
 #autunm{
     margin-right: 11px;
 }
+
 
 #nope{
     margin-right: 6px;
 }
 
-
-#spring, #summer, #winter, #autunm, #start, #nope, #new, #kill{
-    width: 90px;
-    padding:5px;
+#spring, #summer, #winter, #autunm, #start, #new, #nope, #kill, #about{
+    width: 130px;
+    height: 50px;
+    margin: 10px;
     border: 1px solid pink;
     border-radius: 5px;
+    font-family: 'Fredoka', sans-serif;
     animation: anime1 5s infinite alternate;
 }
 
@@ -59,7 +81,16 @@
     width: 130px;   
 }
 
-canvas{
-    margin-left: 400px;
-    border-radius: 20px;
+#maintext{
+    margin-left: 500px;
+    margin-top: 55px;
+    font-family: 'Fredoka', sans-serif;
+}
+#defaultCanvas0{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 0px 5px 2px #fff;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 350px;
 }

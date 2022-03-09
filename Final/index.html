@@ -10,65 +10,63 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
     <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+    <link rel = "icon" type = "image/png" href = "https://www.brightcarbon.com/wp/wp-content/uploads/2018/06/powerpointMaps_04SC.png">
+    
 </head>
 
 <body id="bd">
-
-
-    <div id="flex">
-        <div>
-            <h2 id="maintext">Now spring</h2>
+    <div>
+        <div id="flex">
+            <h2 id="events">Events ></h2>
             <button id="spring">Spring</button>
+            <br>
             <button id="summer">Summer</button>
             <br>
-            <br>
             <button id="autunm">Autunm</button>
+            <br>
             <button id="winter">Winter</button>
             <br>
-            <br>
             <button id="kill" onclick="kill()">Kill them all</button>
+            <br>
             <button id="new" onclick="newgrasseater()">New GrassEaters</button>
             <br>
-            <br>
+            <button id="about"><a href="about.html" id="hrf" target="_target">About Game</a></button>
             <script>
                 weather = "spring"
 
-                document.getElementById("spring").addEventListener("click", function(){
+                document.getElementById("spring").addEventListener("click", function () {
                     weather = "spring"
                 })
 
-                document.getElementById("summer").addEventListener("click", function(){
+                document.getElementById("summer").addEventListener("click", function () {
                     weather = "summer"
                 })
 
-                document.getElementById("winter").addEventListener("click", function(){
+                document.getElementById("winter").addEventListener("click", function () {
                     weather = "winter"
                 })
 
-                document.getElementById("autunm").addEventListener("click", function(){
+                document.getElementById("autunm").addEventListener("click", function () {
                     weather = "autunm"
                 })
 
 
                 function mySpring() {
-                    document.getElementById("maintext").innerHTML = "Now its Spring"
+                    document.getElementById("maintext").innerHTML = "Spring"
                 }
                 function mySummer() {
-                    document.getElementById("maintext").innerHTML = "Now its Summer"
+                    document.getElementById("maintext").innerHTML = "Summer"
                 }
                 function myAutunm() {
-                    document.getElementById("maintext").innerHTML = "Now its Autunm"
+                    document.getElementById("maintext").innerHTML = "Autumn"
                 }
                 function myWinter() {
-                    document.getElementById("maintext").innerHTML = "Now its Winter"
+                    document.getElementById("maintext").innerHTML = "Winter"
                 }
-                function Nope() {
-                    document.getElementById("maintext").innerHTML = "Okay, We don't now what weather is it"
-                }
-                function Start() {
-                    document.getElementById("maintext").innerHTML = "You can change Weather if you click button"
-                }
-
+        
                 document.getElementById("spring").addEventListener("click", mySpring)
                 document.getElementById("summer").addEventListener("click", mySummer)
                 document.getElementById("autunm").addEventListener("click", myAutunm)
@@ -77,6 +75,8 @@
                 document.getElementById("start").addEventListener("click", Start)
             </script>
         </div>
+        <h2 id="maintext">Spring</h2>
+    </div>
         <!-- <span>
         <p>Hello World<p> -->
         <!-- Here will be some information about key events
